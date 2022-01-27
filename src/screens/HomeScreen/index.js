@@ -3,8 +3,8 @@ import {Text, View, FlatList, Image} from 'react-native';
 import {HeaderComponent} from '../../components/header';
 import {styles} from './style';
 import {StoryComponent} from '../../components/storyListRender';
-import {FeedRender} from '../../components/feedRender'
-import {LoadingScreen} from '../../components/loadingScreen'
+import {FeedRender} from '../../components/feedRender';
+import {LoadingScreen} from '../../components/loadingScreen';
 
 export const HomeScreen = () => {
   const story = [
@@ -71,9 +71,9 @@ export const HomeScreen = () => {
   ];
   const newsFeed = [
     {
-      id : 1,
+      id: 1,
       userId: 1,
-      username : 'prabhatghimire',
+      username: 'prabhatghimire',
       ProfilePic:
         'https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-744x744.jpg',
       PostPic:
@@ -82,9 +82,9 @@ export const HomeScreen = () => {
       comment: 160,
     },
     {
-      id : 2,
+      id: 2,
       userId: 1,
-      username : 'prabhatghimire',
+      username: 'prabhatghimire',
       ProfilePic:
         'https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-744x744.jpg',
       PostPic:
@@ -93,9 +93,9 @@ export const HomeScreen = () => {
       comment: 160,
     },
     {
-      id : 3,
+      id: 3,
       userId: 1,
-      username : 'prabhatghimire',
+      username: 'prabhatghimire',
       ProfilePic:
         'https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-744x744.jpg',
       PostPic:
@@ -104,9 +104,9 @@ export const HomeScreen = () => {
       comment: 160,
     },
     {
-      id : 4,
+      id: 4,
       userId: 1,
-      username : 'prabhatghimire',
+      username: 'prabhatghimire',
       ProfilePic:
         'https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-744x744.jpg',
       PostPic:
@@ -114,25 +114,28 @@ export const HomeScreen = () => {
       likes: 50,
       comment: 160,
     },
-    
   ];
   return (
     <View style={styles.container}>
       <HeaderComponent />
-      <FlatList
-        data={story}
-        renderItem={StoryComponent}
-        keyExtractor={item => item.id}
-        horizontal={true}
-        ListEmptyComponent={LoadingScreen}
-      />
+      <View>
+        <FlatList
+          data={story}
+          renderItem={StoryComponent}
+          keyExtractor={item => item.id}
+          horizontal={true}
+          ListEmptyComponent={LoadingScreen}
+        />
+      </View>
 
-      <FlatList
-        data={newsFeed}
-        renderItem={FeedRender}
-        keyExtractor={item => item.id}
-        ListEmptyComponent={LoadingScreen}
-      />
+      <View style={styles.container}>
+        <FlatList
+          data={newsFeed}
+          renderItem={FeedRender}
+          keyExtractor={item => item.id}
+          ListEmptyComponent={LoadingScreen}
+        />
+      </View>
     </View>
   );
 };

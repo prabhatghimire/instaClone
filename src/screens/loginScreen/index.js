@@ -10,6 +10,9 @@ import {
 import {styles} from './style'
 
 export const LoginScreen = ({navigation}) => {
+  const logIn = () => {
+    navigation.navigate('Tab', {screen : 'HOme'})
+  }
   return (
     <View style={styles.loginPagecontainer}>
       <View><Image
@@ -32,6 +35,7 @@ export const LoginScreen = ({navigation}) => {
       </TouchableOpacity></View>
       <TouchableOpacity
         style={styles.buttonStyle}
+        onPress={logIn}
       ><Text>Log In</Text></TouchableOpacity>
 
 <Text>don't have an account? <TouchableOpacity onPress={()=>{navigation.navigate('Register')}}><Text>Sign Up</Text></TouchableOpacity></Text>

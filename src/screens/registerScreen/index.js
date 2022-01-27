@@ -32,7 +32,7 @@ export const RegisterScreen = ({navigation}) => {
         // onPress={onPressLearnMore}
         style={styles.buttonStyle}><Text>Sign Up</Text></TouchableOpacity>
 
-      <Text style={{margin:50, alignItems: 'center'}}>
+      <Text style={styles.container}>
         Already have an account?{' '}
         <TouchableOpacity
           onPress={() => {

@@ -17,4 +17,5 @@ export const styles = StyleSheet.create({
     margin: 8,
     width: 300,
   },
+  container : {margin:50, alignItems: 'center'}
 });

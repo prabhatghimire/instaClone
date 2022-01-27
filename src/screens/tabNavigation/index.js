@@ -3,6 +3,9 @@ import {Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {HomeScreen} from '../HomeScreen';
 import {ProfileScreen} from '../profileScreen';
+import {SearchScreen} from '../searchScreen';
+import {ShopScreen} from '../shopScreen';
+import {MessageScreen} from '../messageScreen';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -22,22 +25,20 @@ export const TabNavigation = () => {
           tabBarIcon: ({focused}) => (
             <Icon name="home" size={20} color={focused ? 'red' : 'white'} />
           ),
-          headerShown: false,
         }}
       />
       <Tab.Screen
         name="Search"
-        component={ProfileScreen}
+        component={SearchScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <Icon name="search" size={20} color={focused ? 'red' : 'white'} />
           ),
-          headerShown: false,
         }}
       />
       <Tab.Screen
         name="Shop"
-        component={ProfileScreen}
+        component={ShopScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <Icon
@@ -46,17 +47,19 @@ export const TabNavigation = () => {
               color={focused ? 'red' : 'white'}
             />
           ),
-          headerShown: false,
         }}
       />
       <Tab.Screen
         name="Message"
-        component={ProfileScreen}
+        component={MessageScreen}
         options={{
           tabBarIcon: ({focused}) => (
             <Icon name="snapchat" size={20} color={focused ? 'red' : 'white'} />
           ),
-          headerShown: false,
+          headerShown: true,
+          headerTitleAlign: 'center',
+          headerStyle: {backgroundColor: 'black'},
+          headerTitleStyle: {color: 'white'},
         }}
       />
       <Tab.Screen
@@ -70,7 +73,10 @@ export const TabNavigation = () => {
               color={focused ? 'red' : 'white'}
             />
           ),
-          headerShown: false,
+          headerShown: true,
+          headerTitleAlign: 'center',
+          headerStyle: {backgroundColor: 'black'},
+          headerTitleStyle: {color: 'white'},
         }}
       />
     </Tab.Navigator>

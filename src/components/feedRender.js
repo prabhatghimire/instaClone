@@ -6,7 +6,7 @@ export const FeedRender = ({item}) => {
   return (
     <View>
       <View style={styles.spaceInBetween}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <View style={styles.userinfocontainer}>
           <Image source={{uri: item.ProfilePic}} style={styles.profilePic} />
           <Text style={styles.text}>{item.username}</Text>
         </View>
@@ -43,6 +43,7 @@ export const FeedRender = ({item}) => {
 };
 
 const styles = StyleSheet.create({
+  userinfocontainer : {flexDirection: 'row', alignItems: 'center'},
   spaceInBetween: {justifyContent: 'space-between', flexDirection: 'row'},
   iconStyle: {margin: 4},
   profilePic: {height: 40, width: 40, borderRadius: 50, margin: 8},
